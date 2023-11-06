@@ -34,9 +34,9 @@ d93080c2fe513df2 = "Entfernen"
 use basteyy\VariousPhpSnippets\i18n;
 use function basteyy\VariousPhpSnippets\__;
 
-i18n::addTranslationFolder(__DIR__ . '/lang/');
-i18n::addTranslationFolder(__DIR__ . '/another_folder/');
-i18n::setTranslationLanguage('de_DE');
+I18n::addTranslationFolder(__DIR__ . '/lang/');
+I18n::addTranslationFolder(__DIR__ . '/another_folder/');
+I18n::setTranslationLanguage('de_DE');
 
 echo __('Add');
 // Result: Hinzufügen
