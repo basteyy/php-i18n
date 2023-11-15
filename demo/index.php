@@ -1,8 +1,8 @@
 <?php
 /**
- * @author Sebastian Eiweleit <sebastian@eiweleit.de>
+ * @author basteyy <sebastian@xzit.email>
  * @website https://github.com/basteyy
- * @website https://eiweleit.de
+ * @website https://xzit.online
  */
 
 declare(strict_types=1);
