@@ -31,8 +31,7 @@ d93080c2fe513df2 = "Entfernen"
 ```php
 // Content of /var/www/index.php
 
-use basteyy\VariousPhpSnippets\i18n;
-use function basteyy\VariousPhpSnippets\__;
+use basteyy\I18n\I18n;
 
 I18n::addTranslationFolder(__DIR__ . '/lang/');
 I18n::addTranslationFolder(__DIR__ . '/another_folder/');

@@ -8,15 +8,17 @@
 declare(strict_types=1);
 
 // Include autoloader
+use basteyy\I18n\I18n;
+
 include dirname(__DIR__) . "/vendor/autoload.php";
 
 echo __('Hello World. Today is the %s', date('d'));
 
 // Add lang folder (in the example is the same folder as the index.php)
-\basteyy\I18n\I18n::addTranslationFolder(__DIR__);
+I18n::addTranslationFolder(__DIR__);
 
 // Change language
-\basteyy\I18n\I18n::setTranslationLanguage('de_DE');
+I18n::setTranslationLanguage('de_DE');
 
 echo '<hr />';
 
@@ -24,7 +26,7 @@ echo '<hr />';
 echo __('Hello World. Today is the %s', date('d'));
 
 // Change language
-\basteyy\I18n\I18n::setTranslationLanguage('fr_FR');
+I18n::setTranslationLanguage('fr_FR');
 
 echo '<hr />';
 
