@@ -12,7 +12,7 @@
 
 namespace basteyy\I18n;
 
-class i18n
+class I18n
 {
     /** @var array where the language is stored */
     private static array $translation_folder;
@@ -32,6 +32,7 @@ class i18n
     /**
      * Try to translate $string
      * @param string $string
+     * @param mixed ...$args
      * @return string
      */
     public static function getTranslation(
