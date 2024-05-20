@@ -13,6 +13,8 @@
 
 const _DOUBLE_EOL = PHP_EOL . PHP_EOL;
 
+const HASH_METHOD = 'xxh3';
+
 $special_word_list = [
     'yes', 'no', 'Yes', 'No'
 ];
@@ -65,10 +67,10 @@ if ($argc < 3 || $argc > 4) {
     $randkomkey = '{{' . uniqid() . '}}';
 
     /* Random Key for replacing \" */
-    $back_slashed_double_quote_replacement = '{{' . hash('xxh3', uniqid() . '"') . '}}';
+    $back_slashed_double_quote_replacement = '{{' . hash(HASH_METHOD, uniqid() . '"') . '}}';
 
     /* Random Key for replacing \' */
-    $back_slashed_single_quote_replacement = '{{' . hash('xxh3', uniqid() . "'") . '}}';
+    $back_slashed_single_quote_replacement = '{{' . hash(HASH_METHOD, uniqid() . "'") . '}}';
 
 
     $processed_strings = [];
@@ -115,7 +117,7 @@ if ($argc < 3 || $argc > 4) {
                     if (!$skip) {
                         $translations_counter++;
 
-                        $hash_value = hash('xxh3', $string);
+                        $hash_value = hash(HASH_METHOD, $string);
                         $new_string = str_replace($sign, $sign_escape, $string);
 
                         if($echo_comments) {

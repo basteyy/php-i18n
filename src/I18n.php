@@ -29,6 +29,9 @@ class I18n
     /** @var bool $use_apcu If true, apcu will be used for caching */
     private static bool $use_apcu = false;
 
+    /** @var string $hash_method The hashing method */
+    private static string $hash_method = 'xxh3';
+
     /**
      * Try to translate $string
      * @param string $string
@@ -91,10 +94,10 @@ class I18n
         }
 
         if ($arg) {
-            return vsprintf(self::$translations[$cur_lang][hash('xxh3', $string)] ?? $string, $args);
+            return vsprintf(self::$translations[$cur_lang][hash(self::$hash_method, $string)] ?? $string, $args);
         }
 
-        return self::$translations[$cur_lang][hash('xxh3', $string)] ?? $string;
+        return self::$translations[$cur_lang][hash(self::$hash_method, $string)] ?? $string;
     }
 
     /**
